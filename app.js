@@ -10,10 +10,10 @@ class Person {
         this.hobbies = hobbies;
     }
     addHobby(hobby) {
-        this.hobbies = this.hobbies + hobby;
+        this.hobbies.push(hobby);
     }
     removeHobby(hobby) {
-        this.hobbies = this.hobbies - hobby;
+        this.hobbies.splice(this.hobbies.indexOf(hobby), 1);
     }
     greeting() {
         console.log(`Hello fellow person!`);
@@ -34,8 +34,9 @@ class Coder extends Person {
 console.log("EXERCISE 3:\n==========\n");
 
 let myself = new Person("Austin", 1, "yes", ["gaming", "biking"]);
+myself.removeHobby("gaming")
 console.log(myself);
-myself.greeting();
+//myself.greeting();
 
 let codebro = new Coder ("Code Bro", 2, "basement", ["coding", "eating"]);
 console.log(codebro);
@@ -65,5 +66,6 @@ class Calculator {
 }
 
 let calculation = new Calculator();
+//calculation.displayResult();
 calculation.divide(8, 2);
 calculation.displayResult();
